@@ -13,6 +13,14 @@ config_version=4
 config/name="bad words filter"
 config/icon="res://icon.png"
 
+[autoload]
+
+BadWordsFilter="*res://addons/badwordsfilter/bad_words_filter.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/badwordsfilter/plugin.cfg" )
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
