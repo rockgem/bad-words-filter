@@ -7,3 +7,7 @@ Can be useful for:
 functions:
 
 is_word_ok(word) -> returns a bool (false if the word contains bad word, true if it is safe)
+
+
+Once the plugin is activated:
+- calling BadWordsFilter.is_word_ok() will return a boolean.
