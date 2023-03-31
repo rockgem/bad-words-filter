@@ -10,4 +10,4 @@ is_word_ok(word) -> returns a bool (false if the word contains bad word, true if
 
 
 Once the plugin is activated:
-- calling BadWordsFilter.is_word_ok() will return a boolean.
+- calling BadWordsFilter.is_word_ok(word) will return a boolean.
