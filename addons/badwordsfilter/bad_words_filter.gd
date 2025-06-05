@@ -324,13 +324,32 @@ var profanity_list = [
 ]
 
 
+
+func _ready() -> void:
+	var file := FileAccess.open("res://addons/badwordsfilter/bad.txt", FileAccess.READ)
+	if file:
+		while not file.eof_reached():
+			var line := file.get_line().strip_edges()
+			if line and not profanity_list.has(line):
+				profanity_list.append(line)
+		file.close()
+	
+	#print(profanity_list)
+
+
 func is_word_ok(word: String) -> bool:
 	
-	var delimiters = [' ', '_', '-']
+	var delimiters = [' ', '_', '-' , '#' , '*' , ',' , ';' , ':']
 	
 	for d in delimiters:
 		for s in word.split(d):
 			if profanity_list.has(s):
 				return false
-	
+	return true
+
+
+func word(word: String) -> bool:
+	for bad_word in profanity_list:
+		if word.find(bad_word) != -1:
+			return false
 	return true
